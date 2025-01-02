@@ -4526,17 +4526,17 @@ span.zubuz-title-shape {
 .zubuz-pricing-body {
   margin-bottom: 40px;
 }
-.zubuz-pricing-body ul li {
+.zubuz-pricing-body li {
   position: relative;
   font-size: 18px;
   font-weight: 600;
   padding-left: 30px;
   margin-bottom: 14px;
 }
-.zubuz-pricing-body ul li:last-child {
+.zubuz-pricing-body li:last-child {
   margin-bottom: 0;
 }
-.zubuz-pricing-body ul li img {
+.zubuz-pricing-body li img {
   left: 0;
   top: 9px;
   position: absolute;
