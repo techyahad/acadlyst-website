@@ -27,8 +27,7 @@
   <link rel="stylesheet" href="assets/css/fontawesome.css">
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/app.min.css">
-
-
+  <link rel="stylesheet" href="assets/css/users.css">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -43,11 +42,15 @@
       ]
     }
     </script>
+    <script src="https://kit.fontawesome.com/76ce8a8118.js" crossorigin="anonymous"></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
 
+    <style>
+
+    </style>
 </head>
 
 <body class="light">
-
   <div class="zubuz-preloader-wrap">
     <div class="zubuz-preloader">
       <div></div>
@@ -57,652 +60,671 @@
     </div>
   </div>
 
-<header class="site-header site-header--menu-center zubuz-header-section" id="sticky-menu">
-  <div class="container">
-    <nav class="navbar site-navbar" role="navigation" aria-label="Main Navigation">
-      <div class="brand-logo">
-        <a href="index.html">
-          <img src="assets/images/logo/web-logo.png" alt="Acadlyst - Simplifying Education" class="light-version-logo">
-        </a>
-      </div>
-
-      <div class="menu-block-wrapper">
-        <div class="menu-overlay" aria-hidden="true"></div>
+  <header class="site-header site-header--menu-center zubuz-header-section" id="sticky-menu">
+    <div class="container">
+      <nav class="navbar site-navbar" role="navigation" aria-label="Main Navigation">
+        <div class="brand-logo">
+          <a href="index.html">
+            <img src="assets/images/logo/web-logo.png" alt="Acadlyst - Simplifying Education" class="light-version-logo">
+          </a>
+        </div>
+        <div class="menu-block-wrapper">
+          <div class="menu-overlay" aria-hidden="true"></div>
+          <nav class="menu-block" id="append-menu-header" role="menu">
+            <div class="mobile-menu-head">
+              <button class="go-back" aria-label="Go Back">
+                <i class="fa fa-angle-left"></i>
+              </button>
+              <div class="current-menu-title" aria-live="polite"></div>
+              <button class="mobile-menu-close" aria-label="Close Menu">&times;</button>
+            </div>
+            <ul class="site-menu-main">
+              <li class="nav-item nav-item-has-children">
+                <a href="#product" class="nav-link-item drop-trigger">Product</a>
+              </li>
+              <li class="nav-item nav-item-has-children">
+                <a href="#about" class="nav-link-item drop-trigger">About</a>
+              </li>
+              <li class="nav-item">
+                <a href="#features" class="nav-link-item">Features</a>
+              </li>
+              <li class="nav-item">
+                <a href="#contact" class="nav-link-item">Contact</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="header-btn header-btn-l1 ms-auto d-none d-xs-inline-flex">
+          <div class="zubuz-header-btn-wrap">
+            <!--Normal-user-->
+            <div id="user-info" style="display: none; position: relative;">
+              <button id="user-dropdown-btn" class="zubuz-login-btn user-dropdown-btn">
+                <span id="user-name"></span>
+                <i class="fa-solid fa-angle-down"></i>
+              </button>
+              <div id="user-dropdown" class="dropdown-content" style="display: none;">
+                <div class="dropdown-header">
+                  <p id="user-email"></p>
+                </div>
+                <button id="logout-btn" class="logout-btn">
+                  <i class="fa-solid fa-power-off"></i> Logout
+                </button>
+              </div>
+            </div>
+            <!--google-user-->
+            <div id="google-user-info" style="display: none; position: relative;">
+              <button id="google-user-dropdown-btn" class="zubuz-login-btn google-user-dropdown-btn">
+                <img id="google-user-pic" src="" alt="User Image" class="google-avatar" />
+                <span id="google-user-name"></span>
+                <i class="fa-solid fa-angle-down"></i>
+              </button>
+              <div id="google-user-dropdown" class="dropdown-content" style="display: none;">
+                <div class="dropdown-header">
+                  <p id="google-user-email"></p>
+                </div>
+                <button id="google-logout-btn" class="logout-btn">
+                  <i class="fa-solid fa-power-off"></i> Logout
+                </button>
+              </div>
+            </div>
+            <a id="login-btn" class="zubuz-login-btn" href="sign-in.html">Login</a>
+          </div>
+          <a class="zubuz-default-btn zubuz-header-btn" href="survey-form.html">
+            <span>Add to Wishlist</span>
+          </a>
+        </div>
         
-        <nav class="menu-block" id="append-menu-header" role="menu">
-          <div class="mobile-menu-head">
-            <button class="go-back" aria-label="Go Back">
-              <i class="fa fa-angle-left"></i>
-            </button>
-            <div class="current-menu-title" aria-live="polite"></div>
-            <button class="mobile-menu-close" aria-label="Close Menu">&times;</button>
-          </div>
+        <button class="mobile-menu-trigger light" aria-label="Open Mobile Menu">
+          <span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
 
-          <ul class="site-menu-main">
-            <li class="nav-item nav-item-has-children">
-              <a href="#product" class="nav-link-item drop-trigger">Product</a>
-            </li>
-            <li class="nav-item nav-item-has-children">
-              <a href="#about" class="nav-link-item drop-trigger">About</a>
-            </li>
-            <li class="nav-item">
-              <a href="#features" class="nav-link-item">Features</a>
-            </li>
-            <li class="nav-item nav-item-has-children">
-              <a href="#pricing" class="nav-link-item drop-trigger">Pricing</a>
-            </li>
-            <li class="nav-item">
-              <a href="#contact" class="nav-link-item">Contact</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-
-      <div class="header-btn header-btn-l1 ms-auto d-none d-xs-inline-flex">
-        <div class="zubuz-header-btn-wrap">
-          <a class="zubuz-login-btn" href="sign-in.html">Login</a>
-        </div>
-        <a class="zubuz-default-btn zubuz-header-btn" href="contact-us.html">
-          <span>Book a Demo</span>
-        </a>
-      </div>
-
-      <button class="mobile-menu-trigger light" aria-label="Open Mobile Menu">
-        <span></span>
-      </button>
-    </nav>
-  </div>
-</header>
-
-<section class="zubuz-hero-section2" id="product" aria-label="Hero Section">
-  <div class="container">
-    <div class="row zubuz_screenfix_right">
-      <div class="col-lg-6">
-        <div class="zubuz-hero-content">
-          <h1>Streamline Education with Simplified Tools</h1>
-          <p>
-            We help you streamline everyday institute operations with easy-to-use digital tools.
-            Our platform takes the hassle out of administration, so you can focus on what truly
-            matters—educating the next generation. With Acadlyst, efficiency is just a click away.
-          </p>
-          <div class="zubuz-hero-btn-wrap">
-            <a class="zubuz-default-btn pill" href="sign-up.html">
-              <span>Sign up for free</span>
-            </a>
-            <a class="zubuz-login-btn m-0" href="#features">Check Demo</a>
+  <section class="zubuz-hero-section2" id="product" aria-label="Hero Section">
+    <div class="container">
+      <div class="row zubuz_screenfix_right">
+        <div class="col-lg-6">
+          <div class="zubuz-hero-content">
+            <h1>Streamline Education with Simplified Tools</h1>
+            <p>
+              We help you streamline everyday institute operations with easy-to-use digital tools.
+              Our platform takes the hassle out of administration, so you can focus on what truly
+              matters—educating the next generation. With Acadlyst, efficiency is just a click away.
+            </p>
+            <div class="zubuz-hero-btn-wrap">
+              <a class="zubuz-default-btn pill" href="sign-up.html">
+                <span>Sign up for free</span>
+              </a>
+              <a class="zubuz-login-btn m-0" href="#features">Check Demo</a>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-lg-6">
-        <div class="zubuz-hero-thumb2">
-          <img 
-            src="assets/images/v2/dashboard.png" 
-            alt="Dashboard preview showcasing Acadlyst's streamlined education tools" 
-            class="hero-main-image"
-          >
-          <div class="zubuz-hero-shape2">
+        <div class="col-lg-6">
+          <div class="zubuz-hero-thumb2">
             <img 
-              src="assets/images/v2/shape1-v2.png" 
-              alt="Decorative shape 1" 
-              class="decorative-shape"
+              src="assets/images/v2/dashboard.png" 
+              alt="Dashboard preview showcasing Acadlyst's streamlined education tools" 
+              class="hero-main-image"
             >
-          </div>
-          <div class="zubuz-hero-shape3">
-            <img 
-              src="assets/images/v2/shape2-v2.png" 
-              alt="Decorative shape 2" 
-              class="decorative-shape"
-            >
+            <div class="zubuz-hero-shape2">
+              <img 
+                src="assets/images/v2/shape1-v2.png" 
+                alt="Decorative shape 1" 
+                class="decorative-shape"
+              >
+            </div>
+            <div class="zubuz-hero-shape3">
+              <img 
+                src="assets/images/v2/shape2-v2.png" 
+                alt="Decorative shape 2" 
+                class="decorative-shape"
+              >
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 <!--Logos--> 
-<div class="zubuz-brand-logo-section ">
-  <div class="container">
-    <div class="zubuz-brand-logo-wrap">
-      <p>Trusted by the Educational institues Globally.</p>
-      <div class="zubuz-brand-slider3">
-        <div class="zubuz-brand-item">
-          <img src="assets/images/v2/logo1.png" alt="">
-        </div>
-        <div class="zubuz-brand-item">
-          <img src="assets/images/v2/logo2.png" alt="">
-        </div>
-        <div class="zubuz-brand-item">
-          <img src="assets/images/v2/logo3.png" alt="">
-        </div>
-        <div class="zubuz-brand-item">
-          <img src="assets/images/v2/logo4.png" alt="">
-        </div>
-        <div class="zubuz-brand-item">
-          <img src="assets/images/v2/logo5.png" alt="">
-        </div>
-        <div class="zubuz-brand-item">
-          <img src="assets/images/v2/logo1.png" alt="">
-        </div>
-        <div class="zubuz-brand-item">
-          <img src="assets/images/v2/logo2.png" alt="">
-        </div>
-        <div class="zubuz-brand-item">
-          <img src="assets/images/v2/logo3.png" alt="">
-        </div>
-        <div class="zubuz-brand-item">
-          <img src="assets/images/v2/logo4.png" alt="">
-        </div>
-        <div class="zubuz-brand-item">
-          <img src="assets/images/v2/logo5.png" alt="">
-        </div>
-        <div class="zubuz-brand-item">
-          <img src="assets/images/v2/logo1.png" alt="">
-        </div>
-        <div class="zubuz-brand-item">
-          <img src="assets/images/v2/logo2.png" alt="">
-        </div>
-        <div class="zubuz-brand-item">
-          <img src="assets/images/v2/logo3.png" alt="">
-        </div>
-        <div class="zubuz-brand-item">
-          <img src="assets/images/v2/logo3.png" alt="">
-        </div>
-        <div class="zubuz-brand-item">
-          <img src="assets/images/v2/logo4.png" alt="">
+  <div class="zubuz-brand-logo-section ">
+    <div class="container">
+      <div class="zubuz-brand-logo-wrap">
+        <p>Trusted by the Educational institues Globally.</p>
+        <div class="zubuz-brand-slider3">
+          <div class="zubuz-brand-item">
+            <img src="assets/images/v2/logo1.png" alt="">
+          </div>
+          <div class="zubuz-brand-item">
+            <img src="assets/images/v2/logo2.png" alt="">
+          </div>
+          <div class="zubuz-brand-item">
+            <img src="assets/images/v2/logo3.png" alt="">
+          </div>
+          <div class="zubuz-brand-item">
+            <img src="assets/images/v2/logo4.png" alt="">
+          </div>
+          <div class="zubuz-brand-item">
+            <img src="assets/images/v2/logo5.png" alt="">
+          </div>
+          <div class="zubuz-brand-item">
+            <img src="assets/images/v2/logo1.png" alt="">
+          </div>
+          <div class="zubuz-brand-item">
+            <img src="assets/images/v2/logo2.png" alt="">
+          </div>
+          <div class="zubuz-brand-item">
+            <img src="assets/images/v2/logo3.png" alt="">
+          </div>
+          <div class="zubuz-brand-item">
+            <img src="assets/images/v2/logo4.png" alt="">
+          </div>
+          <div class="zubuz-brand-item">
+            <img src="assets/images/v2/logo5.png" alt="">
+          </div>
+          <div class="zubuz-brand-item">
+            <img src="assets/images/v2/logo1.png" alt="">
+          </div>
+          <div class="zubuz-brand-item">
+            <img src="assets/images/v2/logo2.png" alt="">
+          </div>
+          <div class="zubuz-brand-item">
+            <img src="assets/images/v2/logo3.png" alt="">
+          </div>
+          <div class="zubuz-brand-item">
+            <img src="assets/images/v2/logo3.png" alt="">
+          </div>
+          <div class="zubuz-brand-item">
+            <img src="assets/images/v2/logo4.png" alt="">
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 <!--Logos End-->
 
-
 <!--Mobile App-->
-<section class="section zubuz-section-padding3 bg-light" id="mobile-app" aria-label="Mobile Application Features">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-5 order-lg-2">
-        <figure class="zubuz-thumb thumb-pl">
-          <img 
-            src="assets/images/v2/app-dashboard.png" 
-            alt="Mobile app dashboard showcasing seamless institute management features" 
-            class="mobile-app-image"
-          >
-          <figcaption class="visually-hidden">
-            A preview of the mobile application dashboard
-          </figcaption>
-          <div class="zubuz-thumb-card2">
+  <section class="section zubuz-section-padding3 bg-light" id="mobile-app" aria-label="Mobile Application Features">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5 order-lg-2">
+          <figure class="zubuz-thumb thumb-pl">
             <img 
-              src="assets/images/v1/card2.png" 
-              alt="Mobile app card showing interactive elements" 
-              class="mobile-app-card-image"
+              src="assets/images/v2/app-dashboard.png" 
+              alt="Mobile app dashboard showcasing seamless institute management features" 
+              class="mobile-app-image"
             >
-          </div>
-        </figure>
-      </div>
-      <div class="col-lg-7 d-flex align-items-center">
-        <div class="zubuz-default-content">
-          <h2>Our Free Mobile Application</h2>
-          <p>
-            Experience seamless institute management at your fingertips with our mobile app.
-            Designed to keep parents, students, and teachers connected like never before.
-          </p>
-          <div class="zubuz-extra-mt">
-            <div class="zubuz-iconbox-wrap-left">
-              <div class="zubuz-iconbox-icon">
-                <img 
-                  src="assets/images/v1/icon1.png" 
-                  alt="Icon representing parent communication" 
-                  class="feature-icon"
-                >
-              </div>
-              <div class="zubuz-iconbox-data">
-                <span>Parent Communication</span>
-                <p>
-                  Stay updated with instant notifications, messages, and progress reports.
-                </p>
-              </div>
+            <figcaption class="visually-hidden">
+              A preview of the mobile application dashboard
+            </figcaption>
+            <div class="zubuz-thumb-card2">
+              <img 
+                src="assets/images/v1/card2.png" 
+                alt="Mobile app card showing interactive elements" 
+                class="mobile-app-card-image"
+              >
             </div>
-            <div class="zubuz-iconbox-wrap-left">
-              <div class="zubuz-iconbox-icon">
-                <img 
-                  src="assets/images/v1/icon2.png" 
-                  alt="Icon representing attendance tracking" 
-                  class="feature-icon"
-                >
+          </figure>
+        </div>
+        <div class="col-lg-7 d-flex align-items-center">
+          <div class="zubuz-default-content">
+            <h2>Our Free Mobile Application</h2>
+            <p>
+              Experience seamless institute management at your fingertips with our mobile app.
+              Designed to keep parents, students, and teachers connected like never before.
+            </p>
+            <div class="zubuz-extra-mt">
+              <div class="zubuz-iconbox-wrap-left">
+                <div class="zubuz-iconbox-icon">
+                  <img 
+                    src="assets/images/v1/icon1.png" 
+                    alt="Icon representing parent communication" 
+                    class="feature-icon"
+                  >
+                </div>
+                <div class="zubuz-iconbox-data">
+                  <span>Parent Communication</span>
+                  <p>
+                    Stay updated with instant notifications, messages, and progress reports.
+                  </p>
+                </div>
               </div>
-              <div class="zubuz-iconbox-data">
-                <span>Attendance Tracking</span>
-                <p>
-                  Simplify attendance management with real-time updates directly from the app.
-                </p>
+              <div class="zubuz-iconbox-wrap-left">
+                <div class="zubuz-iconbox-icon">
+                  <img 
+                    src="assets/images/v1/icon2.png" 
+                    alt="Icon representing attendance tracking" 
+                    class="feature-icon"
+                  >
+                </div>
+                <div class="zubuz-iconbox-data">
+                  <span>Attendance Tracking</span>
+                  <p>
+                    Simplify attendance management with real-time updates directly from the app.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 <!--Mobile App End-->
 
-
 <!--Features-->
-<section class="section zubuz-section-padding3" id="features" aria-labelledby="features-title">
-  <div class="container">
-    <div class="zubuz-section-title center">
-      <h2 id="features-title">Our Educational Management System Key Features</h2>
+  <section class="section zubuz-section-padding3" id="features" aria-labelledby="features-title">
+    <div class="container">
+      <div class="zubuz-section-title center">
+        <h2 id="features-title">Our Educational Management System Key Features</h2>
+      </div>
+      <div class="row">
+        <div class="col-xl-4 col-md-6">
+          <article class="zubuz-iconbox-wrap center" aria-labelledby="feature-cloud-based">
+            <div class="zubuz-iconbox-icon">
+              <img 
+                src="assets/images/v1/icon-3.png" 
+                alt="Cloud-based feature icon" 
+                class="feature-icon"
+              >
+            </div>
+            <div class="zubuz-iconbox-data">
+              <h3 id="feature-cloud-based">Cloud Based</h3>
+              <p>Simplify educational operations with our cloud-based Management System.</p>
+            </div>
+          </article>
+        </div>
+        <div class="col-xl-4 col-md-6">
+          <article class="zubuz-iconbox-wrap center" aria-labelledby="feature-role-based-access">
+            <div class="zubuz-iconbox-icon">
+              <img 
+                src="assets/images/v1/icon4.png" 
+                alt="Role-based access feature icon" 
+                class="feature-icon"
+              >
+            </div>
+            <div class="zubuz-iconbox-data">
+              <h3 id="feature-role-based-access">Role-based Access</h3>
+              <p>Provide administrators, teachers, parents, and students with tailored access levels.</p>
+            </div>
+          </article>
+        </div>
+        <div class="col-xl-4 col-md-6">
+          <article class="zubuz-iconbox-wrap center" aria-labelledby="feature-online-fee-payment">
+            <div class="zubuz-iconbox-icon">
+              <img 
+                src="assets/images/v1/icon5.png" 
+                alt="Online fee payment feature icon" 
+                class="feature-icon"
+              >
+            </div>
+            <div class="zubuz-iconbox-data">
+              <h3 id="feature-online-fee-payment">Online Fee Payment</h3>
+              <p>Make fee payments hassle-free with our secure online payment system.</p>
+            </div>
+          </article>
+        </div>
+        <div class="col-xl-4 col-md-6">
+          <article class="zubuz-iconbox-wrap center" aria-labelledby="feature-mobile-app">
+            <div class="zubuz-iconbox-icon">
+              <img 
+                src="assets/images/v1/icon-4.png" 
+                alt="Mobile app feature icon" 
+                class="feature-icon"
+              >
+            </div>
+            <div class="zubuz-iconbox-data">
+              <h3 id="feature-mobile-app">Mobile App</h3>
+              <p>
+                A dedicated, free mobile app for parents, teachers, and students to track progress and overall rankings.
+              </p>
+            </div>
+          </article>
+        </div>
+        <div class="col-xl-4 col-md-6">
+          <article class="zubuz-iconbox-wrap center" aria-labelledby="feature-customizable-dashboard">
+            <div class="zubuz-iconbox-icon">
+              <img 
+                src="assets/images/v1/icon6.png" 
+                alt="Customizable dashboard feature icon" 
+                class="feature-icon"
+              >
+            </div>
+            <div class="zubuz-iconbox-data">
+              <h3 id="feature-customizable-dashboard">Customizable Dashboard</h3>
+              <p>Provide a personalized dashboard for administrators, teachers, and parents.</p>
+            </div>
+          </article>
+        </div>
+        <div class="col-xl-4 col-md-6">
+          <article class="zubuz-iconbox-wrap center" aria-labelledby="feature-multi-language-support">
+            <div class="zubuz-iconbox-icon">
+              <img 
+                src="assets/images/v1/icon8.png" 
+                alt="Multi-language support feature icon" 
+                class="feature-icon"
+              >
+            </div>
+            <div class="zubuz-iconbox-data">
+              <h3 id="feature-multi-language-support">Multi-Language Support</h3>
+              <p>Offer multi-language options for better accessibility and inclusivity.</p>
+            </div>
+          </article>
+        </div>
+      </div>
     </div>
-    <div class="row">
-      <div class="col-xl-4 col-md-6">
-        <article class="zubuz-iconbox-wrap center" aria-labelledby="feature-cloud-based">
-          <div class="zubuz-iconbox-icon">
-            <img 
-              src="assets/images/v1/icon-3.png" 
-              alt="Cloud-based feature icon" 
-              class="feature-icon"
-            >
-          </div>
-          <div class="zubuz-iconbox-data">
-            <h3 id="feature-cloud-based">Cloud Based</h3>
-            <p>Simplify educational operations with our cloud-based Management System.</p>
-          </div>
-        </article>
-      </div>
-      <div class="col-xl-4 col-md-6">
-        <article class="zubuz-iconbox-wrap center" aria-labelledby="feature-role-based-access">
-          <div class="zubuz-iconbox-icon">
-            <img 
-              src="assets/images/v1/icon4.png" 
-              alt="Role-based access feature icon" 
-              class="feature-icon"
-            >
-          </div>
-          <div class="zubuz-iconbox-data">
-            <h3 id="feature-role-based-access">Role-based Access</h3>
-            <p>Provide administrators, teachers, parents, and students with tailored access levels.</p>
-          </div>
-        </article>
-      </div>
-      <div class="col-xl-4 col-md-6">
-        <article class="zubuz-iconbox-wrap center" aria-labelledby="feature-online-fee-payment">
-          <div class="zubuz-iconbox-icon">
-            <img 
-              src="assets/images/v1/icon5.png" 
-              alt="Online fee payment feature icon" 
-              class="feature-icon"
-            >
-          </div>
-          <div class="zubuz-iconbox-data">
-            <h3 id="feature-online-fee-payment">Online Fee Payment</h3>
-            <p>Make fee payments hassle-free with our secure online payment system.</p>
-          </div>
-        </article>
-      </div>
-      <div class="col-xl-4 col-md-6">
-        <article class="zubuz-iconbox-wrap center" aria-labelledby="feature-mobile-app">
-          <div class="zubuz-iconbox-icon">
-            <img 
-              src="assets/images/v1/icon-4.png" 
-              alt="Mobile app feature icon" 
-              class="feature-icon"
-            >
-          </div>
-          <div class="zubuz-iconbox-data">
-            <h3 id="feature-mobile-app">Mobile App</h3>
-            <p>
-              A dedicated, free mobile app for parents, teachers, and students to track progress and overall rankings.
-            </p>
-          </div>
-        </article>
-      </div>
-      <div class="col-xl-4 col-md-6">
-        <article class="zubuz-iconbox-wrap center" aria-labelledby="feature-customizable-dashboard">
-          <div class="zubuz-iconbox-icon">
-            <img 
-              src="assets/images/v1/icon6.png" 
-              alt="Customizable dashboard feature icon" 
-              class="feature-icon"
-            >
-          </div>
-          <div class="zubuz-iconbox-data">
-            <h3 id="feature-customizable-dashboard">Customizable Dashboard</h3>
-            <p>Provide a personalized dashboard for administrators, teachers, and parents.</p>
-          </div>
-        </article>
-      </div>
-      <div class="col-xl-4 col-md-6">
-        <article class="zubuz-iconbox-wrap center" aria-labelledby="feature-multi-language-support">
-          <div class="zubuz-iconbox-icon">
-            <img 
-              src="assets/images/v1/icon8.png" 
-              alt="Multi-language support feature icon" 
-              class="feature-icon"
-            >
-          </div>
-          <div class="zubuz-iconbox-data">
-            <h3 id="feature-multi-language-support">Multi-Language Support</h3>
-            <p>Offer multi-language options for better accessibility and inclusivity.</p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
 <!--Features End-->
 
 <!--About Us-->
-<section class="section zubuz-section-padding2 bg-light" id="about" aria-labelledby="about-title">
-  <div id="zubuz-counter" aria-hidden="true"></div>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-5">
-        <figure class="zubuz-v2-thumb thumb-mr">
-          <img 
-            src="assets/images/v2/app-dashboard-logo.png" 
-            alt="Acadlyst dashboard logo" 
-            class="about-logo"
-          >
-          <div class="zubuz-v2-thumb-shape">
+  <section class="section zubuz-section-padding2 bg-light" id="about" aria-labelledby="about-title">
+    <div id="zubuz-counter" aria-hidden="true"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5">
+          <figure class="zubuz-v2-thumb thumb-mr">
             <img 
-              src="assets/images/v2/shape3-v2.png" 
-              alt="Decorative background shape" 
-              aria-hidden="true"
+              src="assets/images/v2/app-dashboard-logo.png" 
+              alt="Acadlyst dashboard logo" 
+              class="about-logo"
             >
-          </div>
-        </figure>
-      </div>
-      <div class="col-lg-7">
-        <article class="zubuz-default-content">
-          <h2 id="about-title">The Acadlyst Story</h2>
-          <p>
-            Our journey began with a simple idea: to replace outdated, manual processes with smart, digital solutions. 
-            From biometric attendance to secure fee collection, our tools are designed to reduce workloads, 
-            improve efficiency, and bring transparency to education management.
-          </p>
-          <p>
-            Today, Acadlyst is more than just a platform; it's a commitment to innovation, adaptability, and excellence. 
-            With every institution we serve, we continue to shape the future of education management—one feature, 
-            one solution, and one success story at a time.
-          </p>
-        </article>
+            <div class="zubuz-v2-thumb-shape">
+              <img 
+                src="assets/images/v2/shape3-v2.png" 
+                alt="Decorative background shape" 
+                aria-hidden="true"
+              >
+            </div>
+          </figure>
+        </div>
+        <div class="col-lg-7">
+          <article class="zubuz-default-content">
+            <h2 id="about-title">The Acadlyst Story</h2>
+            <p>
+              Our journey began with a simple idea: to replace outdated, manual processes with smart, digital solutions. 
+              From biometric attendance to secure fee collection, our tools are designed to reduce workloads, 
+              improve efficiency, and bring transparency to education management.
+            </p>
+            <p>
+              Today, Acadlyst is more than just a platform; it's a commitment to innovation, adaptability, and excellence. 
+              With every institution we serve, we continue to shape the future of education management—one feature, 
+              one solution, and one success story at a time.
+            </p>
+          </article>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 <!--About Us End-->
 
-<!--Pricing-->
-<div class="section zubuz-section-padding3 position-relative" id="pricing">
-  <div class="container">
-    <div class="zubuz-section-title text-center">
-      <h2>Choose the Perfect Plan for Your Institution</h2>
-    </div>
-    <div class="pricing-btn">
-      <label>Billed monthly</label>
-      <div class="toggle-btn">
-        <input class="form-check-input btn-toggle price-deck-trigger" type="checkbox" id="flexSwitchCheckDefault" data-pricing-trigger data-target="#table-price-value" checked>
-      </div>
-      <label>Billed annually</label>
-    </div>
-    <div class="row" id="table-price-value" data-pricing-dynamic data-value-active="monthly">
-      <div class="col-xl-4 col-md-6 mb-4">
-        <div class="zubuz-pricing-wrap">
-          <div class="zubuz-pricing-header">
-            <h5>Start Simple</h5>
-          </div>
-          <div class="zubuz-pricing-price">
-            <span class="zubuz-price dynamic-value" data-active="$20" data-monthly="$20" data-yearly="$200"></span>
-            <p class="dynamic-value" data-active="Monthly" data-monthly="Monthly" data-yearly="Yearly"></p>
-          </div>
-          <p class="zubuz-pricing-description">Perfect for small institutions or startups</p>
-          <ul class="zubuz-pricing-body">
-            <li><img src="assets/images/v2/check2.png" alt=""> Attendance Management</li>
-            <li><img src="assets/images/v2/check2.png" alt=""> Fee Tracking System</li>
-            <li><img src="assets/images/v2/check2.png" alt=""> Basic Parent-Teacher Communication Portal</li>
-            <li><img src="assets/images/v2/check2.png" alt=""> Student Performance Reports</li>
-            <li><img src="assets/images/v2/check2.png" alt=""> Limited User Accounts</li>
-          </ul>
-          <a class="zubuz-pricing-btn" href="pricing.html">Select the plan</a>
-        </div>
-      </div>
-      <div class="col-xl-4 col-md-6 mb-4">
-        <div class="zubuz-pricing-wrap active">
-          <div class="zubuz-pricing-header">
-            <h5>Smart Operations</h5>
-          </div>
-          <div class="zubuz-pricing-price">
-            <span class="zubuz-price dynamic-value" data-active="$50" data-monthly="$50" data-yearly="$500"></span>
-            <p class="dynamic-value" data-active="Monthly" data-monthly="Monthly" data-yearly="Yearly"></p>
-          </div>
-          <p class="zubuz-pricing-description">Ideal for mid-sized institutions</p>
-          <ul class="zubuz-pricing-body">
-            <li><img src="assets/images/v2/check2.png" alt=""> All features of the Basic Plan</li>
-            <li><img src="assets/images/v2/check2.png" alt=""> Customizable Dashboards</li>
-            <li><img src="assets/images/v2/check2.png" alt=""> Timetable Management</li>
-            <li><img src="assets/images/v2/check2.png" alt=""> Advanced Parent-Teacher Communication</li>
-            <li><img src="assets/images/v2/check2.png" alt=""> Document Management</li>
-            <li><img src="assets/images/v2/check2.png" alt=""> Medium User Accounts</li>
-          </ul>
-          <a class="zubuz-pricing-btn active" href="pricing.html">Select the plan</a>
-        </div>
-      </div>
-      <div class="col-xl-4 col-md-6 mb-4">
-        <div class="zubuz-pricing-wrap">
-          <div class="zubuz-pricing-header">
-            <h5>Complete Suite</h5>
-          </div>
-          <div class="zubuz-pricing-price">
-            <span class="zubuz-price dynamic-value" data-active="$100" data-monthly="$100" data-yearly="$1000"></span>
-            <p class="dynamic-value" data-active="Monthly" data-monthly="Monthly" data-yearly="Yearly"></p>
-          </div>
-          <p class="zubuz-pricing-description">Best for large institutions and organizations</p>
-          <ul class="zubuz-pricing-body">
-            <li><img src="assets/images/v2/check2.png" alt=""> All features of the Standard Plan</li>
-            <li><img src="assets/images/v2/check2.png" alt=""> Unlimited User Accounts</li>
-            <li><img src="assets/images/v2/check2.png" alt=""> Custom Integrations</li>
-            <li><img src="assets/images/v2/check2.png" alt=""> Advanced Analytics & Insights</li>
-            <li><img src="assets/images/v2/check2.png" alt=""> Priority Customer Support</li>
-            <li><img src="assets/images/v2/check2.png" alt=""> Branding Options</li>
-            <li><img src="assets/images/v2/check2.png" alt=""> Multi-Campus Management</li>
-          </ul>
-          <a class="zubuz-pricing-btn" href="pricing.html">Select the plan</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="zubuz-pricing-shape">
-    <img src="assets/images/v2/shape4-v2.png" alt="Decorative Shape">
-  </div>
-</div>
-<!--Pricing End-->
-
 <!--Contact Us-->
-<div class="section zubuz-section-padding2 bg-light" id="contact">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6">
-        <div class="zubuz-default-content">
-          <h2>Contact our support team</h2>
-          <p>Book an appointment with our team now! If you have any questions, contact us and schedule a call.</p>
-          <div class="zubuz-extara-mt">
-            <div class="zubuz-iconbox-wrap-left">
-              <div class="zubuz-iconbox-data">
-                <span>Office Location:</span>
-                <p>Thandi Sarak, Old Campus Colony Hyderabad, Sindh 76080</p>
+  <div class="section zubuz-section-padding2" id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="zubuz-default-content">
+            <h2>Contact our support team</h2>
+            <p>Book an appointment with our team now! If you have any questions, contact us and schedule a call.</p>
+            <div class="zubuz-extara-mt">
+              <div class="zubuz-iconbox-wrap-left">
+                <div class="zubuz-iconbox-data">
+                  <span>Office Location:</span>
+                  <p>Thandi Sarak, Old Campus Colony Hyderabad, Sindh 76080</p>
+                </div>
               </div>
-            </div>
-            <div class="zubuz-iconbox-wrap-left">
-              <div class="zubuz-iconbox-data">
-                <span>Contact Number:</span>
-                <p>+92 333 0700019</p>
+              <div class="zubuz-iconbox-wrap-left">
+                <div class="zubuz-iconbox-data">
+                  <span>Contact Number:</span>
+                  <p>+92 333 0700019</p>
+                </div>
               </div>
-            </div>
-            <div class="zubuz-iconbox-wrap-left">
-              <div class="zubuz-iconbox-data">
-                <span>Social Media:</span>
-                <div class="zubuz-social-icon">
-                  <ul class="list-inline mb-0">
-                    <li class="list-inline-item">
-                      <a href="#" target="_blank">
-                        <img src="assets/images/icons/linkedin.png" alt="LinkedIn">
-                      </a>
-                    </li>
-                    <li class="list-inline-item">
-                      <a href="#" target="_blank">
-                        <img src="assets/images/icons/twitter.png" alt="Twitter">
-                      </a>
-                    </li>
-                    <li class="list-inline-item">
-                      <a href="#" target="_blank">
-                        <img src="assets/images/icons/facebook.png" alt="Facebook">
-                      </a>
-                    </li>
-                    <li class="list-inline-item">
-                      <a href="#" target="_blank">
-                        <img src="assets/images/icons/instagram.png" alt="Instagram">
-                      </a>
-                    </li>
-                  </ul>
+              <div class="zubuz-iconbox-wrap-left">
+                <div class="zubuz-iconbox-data">
+                  <span>Social Media:</span>
+                  <div class="zubuz-social-icon">
+                    <ul class="list-inline mb-0">
+                      <li class="list-inline-item">
+                        <a href="#" target="_blank">
+                          <img src="assets/images/icons/linkedin.png" alt="LinkedIn">
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#" target="_blank">
+                          <img src="assets/images/icons/twitter.png" alt="Twitter">
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#" target="_blank">
+                          <img src="assets/images/icons/facebook.png" alt="Facebook">
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#" target="_blank">
+                          <img src="assets/images/icons/instagram.png" alt="Instagram">
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <!-- Contact Form -->
-      <div class="col-lg-6">
-        <div class="zubuz-form-wrap">
-          <h3>Fill the form below</h3>
-          <form id="form" method="post">
-            <input type="hidden" name="access_key" value="0f3c7452-e750-484f-a09d-e8bd44743b58">
-            <div class="row">
-              <div class="col-lg-6 mb-3">
-                <div class="zubuz-main-form">
-                  <input type="text" name="name" placeholder="Your Name*" required>
+        <!-- Contact Form -->
+        <div class="col-lg-6">
+          <div class="zubuz-form-wrap">
+            <h3>Fill the form below</h3>
+            <form id="form" method="post">
+              <input type="hidden" name="access_key" value="0f3c7452-e750-484f-a09d-e8bd44743b58">
+              <div class="row">
+                <div class="col-lg-6 mb-3">
+                  <div class="zubuz-main-form">
+                    <input type="text" name="name" placeholder="Your Name*" required>
+                  </div>
+                </div>
+                <div class="col-lg-6 mb-3">
+                  <div class="zubuz-main-form">
+                    <input type="email" name="email" placeholder="Email Address*" required>
+                  </div>
                 </div>
               </div>
-              <div class="col-lg-6 mb-3">
-                <div class="zubuz-main-form">
-                  <input type="email" name="email" placeholder="Email Address*" required>
-                </div>
+              <div class="zubuz-main-form mb-3">
+                <input type="text" name="subject" placeholder="Subject">
               </div>
-            </div>
-            <div class="zubuz-main-form mb-3">
-              <input type="text" name="subject" placeholder="Subject">
-            </div>
-            <div class="zubuz-main-form mb-3">
-              <textarea name="message" placeholder="Write us your comment" required></textarea>
-            </div>
-            <button id="zubuz-submit-btn" type="submit"><span>Send Message</span></button>
-          </form>
-          <div id="result" class="mt-3" style="color: #333;"></div> <!-- For status messages -->
+              <div class="zubuz-main-form mb-3">
+                <textarea name="message" placeholder="Write us your comment" required></textarea>
+              </div>
+              <button id="zubuz-submit-btn" type="submit"><span>Send Message</span></button>
+            </form>
+            <div id="result" class="mt-3" style="color: #333;"></div> <!-- For status messages -->
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 <!--Contact us End-->
 
-<!--Footer-->
-<footer class="zubuz-footer-section main-footer">
-  <div class="container">
-    <div class="zubuz-footer-top">
-      <div class="row">
-        <section class="col-xl-4 col-lg-12">
-          <div class="zubuz-footer-textarea">
-            <a href="index.html">
-              <img src="assets/images/logo/web-logo.png" alt="Acadlyst Logo" style="max-width:200px">
-            </a>
-            <p>Empower your institution with Acadlyst, a comprehensive ERP solution to streamline operations and enhance communication.</p>
-            <div class="zubuz-subscribe-one">
-              <form action="#" method="POST">
-                <label for="footer-subscribe-email" class="sr-only">Email Address</label>
-                <input type="email" id="footer-subscribe-email" placeholder="Email Address" required>
-                <button class="zubuz-default-btn zubuz-subscription-btn one" type="submit">
-                  <span>Subscribe</span>
-                </button>
-              </form>
+<!--faq-->
+  <div class="section zubuz-section-padding2 bg-light" id="faq">
+    <div class="container">
+      <div class="zubuz-section-title center">
+        <h2>Find all the answers to your confusion</h2>
+      </div>
+      <div class="zubuz-accordion-wrap zubuz-accordion-wrap2" id="zubuz-accordion">
+        <div class="zubuz-accordion-item open">
+          <div class="zubuz-accordion-header">
+            <p>Q: Is there a mobile application?</p>
+            <div class="zubuz-active-icon">
+              <img src="../assets/images/v3/plus.png" alt="">
+            </div>
+            <div class="zubuz-inactive-icon">
+              <img src="../assets/images/v3/minus.png" alt="">
             </div>
           </div>
-        </section>
-        <section class="col-xl-3 col-md-4">
-          <div class="zubuz-footer-menu">
-            <h4>Our Website</h4>
-            <br>
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Features</a></li>
-              <li><a href="#">Pricing</a></li>
-              <li><a href="#">Contact Us</a></li>
-            </ul>
+          <div class="zubuz-accordion-body">
+            <p> Yes, we have a fully functional mobile application. It allows you to manage your school's operations on the go, with features for principals, teachers, students, and parents.</p>
           </div>
-        </section>
-        <section class="col-xl-2 col-md-4">
-          <div class="zubuz-footer-menu">
-            <h4>CTA</h4>
-            <br>
-            <ul>
-              <li><a href="#">Contact</a></li>
-              <li><a href="#">Demo</a></li>
-              <li><a href="#">Features</a></li>
-              <li><a href="#">FAQ</a></li>
-            </ul>
+        </div>
+        <div class="zubuz-accordion-item">
+          <div class="zubuz-accordion-header">
+            <p>Can your software support multiple campuses?</p>
+            <div class="zubuz-active-icon">
+              <img src="../assets/images/v3/plus.png" alt="">
+            </div>
+            <div class="zubuz-inactive-icon">
+              <img src="../assets/images/v3/minus.png" alt="">
+            </div>
           </div>
-        </section>
-        <section class="col-xl-3 col-md-4">
-          <div class="zubuz-footer-menu">
-            <h4>Resources</h4>
-            <br>
-            <ul>
-              <li><a href="#">Support</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Terms & Conditions</a></li>
-              <li><a href="#">Documentation</a></li>
-              <li><a href="#">Video Tutorials</a></li>
-            </ul>
+          <div class="zubuz-accordion-body">
+            <p>Yes, our software can manage multiple campuses. The principal/Admin can see and control everything from one main dashboard.</p>
           </div>
-        </section>
-      </div>
-    </div>
-    <div class="zubuz-footer-bottom">
-      <div class="zubuz-social-icon order-md-2">
-        <ul class="list-inline mb-0">
-          <li class="list-inline-item">
-            <a href="#" target="_blank">
-              <img src="assets/images/icons/linkedin.png" alt="LinkedIn">
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a href="#" target="_blank">
-              <img src="assets/images/icons/facebook.png" alt="Facebook">
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a href="#" target="_blank">
-              <img src="assets/images/icons/instagram.png" alt="Instagram">
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a href="#" target="_blank">
-              <img src="assets/images/icons/twitter.png" alt="Twitter">
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a href="#" target="_blank">
-              <img src="assets/images/icons/github.png" alt="GitHub">
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="zubuz-copywright">
-        <p>&copy; 2024 Acadlyst. All Rights Reserved.</p>
+        </div>
+        <div class="zubuz-accordion-item">
+          <div class="zubuz-accordion-header">
+            <p>Q: Can I check the features before buying the software? </p>
+            <div class="zubuz-active-icon">
+              <img src="../assets/images/v3/plus.png" alt="">
+            </div>
+            <div class="zubuz-inactive-icon">
+              <img src="../assets/images/v3/minus.png" alt="">
+            </div>
+          </div>
+          <div class="zubuz-accordion-body">
+            <p>Yes, we offer a demo version of our School ERP software, allowing you to explore its features and functionalities before making a purchase.</p>
+          </div>
+        </div>
+        <div class="zubuz-accordion-item">
+          <div class="zubuz-accordion-header">
+            <p>Q: Is it multi role-based software?</p>
+            <div class="zubuz-active-icon">
+              <img src="../assets/images/v3/plus.png" alt="">
+            </div>
+            <div class="zubuz-inactive-icon">
+              <img src="../assets/images/v3/minus.png" alt="">
+            </div>
+          </div>
+          <div class="zubuz-accordion-body">
+            <p>Yes, Our software is role-based, meaning different users (e.g., principals, teachers, students, parents) will have access to features tailored to their specific roles and responsibilities.</p>
+          </div>
+        </div>
+        <div class="zubuz-accordion-item">
+          <div class="zubuz-accordion-header">
+            <p>Q: Is my data secure or Is this software secure?</p>
+            <div class="zubuz-active-icon plus">
+              <img src="../assets/images/v3/plus.png" alt="">
+            </div>
+            <div class="zubuz-inactive-icon">
+              <img src="../assets/images/v3/minus.png" alt="">
+            </div>
+          </div>
+          <div class="zubuz-accordion-body">
+            <p>Yes, security is a top priority. We use industry-standard encryption and authentication protocols to protect your data. All sensitive information is stored securely, ensuring that your school's data remains private and safe.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</footer>
+<!--faq end-->
+
+<!--Footer-->
+  <footer class="zubuz-footer-section main-footer">
+    <div class="container">
+      <div class="zubuz-footer-top">
+        <div class="row">
+          <section class="col-xl-4 col-lg-12">
+            <div class="zubuz-footer-textarea">
+              <a href="index.html">
+                <img src="assets/images/logo/web-logo.png" alt="Acadlyst Logo" style="max-width:200px">
+              </a>
+              <p>Empower your institution with Acadlyst, a comprehensive ERP solution to streamline operations and enhance communication.</p>
+              <div class="zubuz-subscribe-one">
+                <form action="#" method="POST">
+                  <label for="footer-subscribe-email" class="sr-only">Email Address</label>
+                  <input type="email" id="footer-subscribe-email" placeholder="Email Address" required>
+                  <button class="zubuz-default-btn zubuz-subscription-btn one" type="submit">
+                    <span>Subscribe</span>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </section>
+          <section class="col-xl-3 col-md-4">
+            <div class="zubuz-footer-menu">
+              <h4>Our Website</h4>
+              <br>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="contact-us.html">Contact Us</a></li>
+              </ul>
+            </div>
+          </section>
+          <section class="col-xl-2 col-md-4">
+            <div class="zubuz-footer-menu">
+              <h4>CTA</h4>
+              <br>
+              <ul>
+                <li><a href="contact-us.html">Contact</a></li>
+                <li><a href="survey-form.html">Demo</a></li>
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
+              </ul>
+            </div>
+          </section>
+          <section class="col-xl-3 col-md-4">
+            <div class="zubuz-footer-menu">
+              <h4>Resources</h4>
+              <br>
+              <ul>
+                <li><a href="#">Support</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="#">Video Tutorials</a></li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </div>
+      <div class="zubuz-footer-bottom">
+        <div class="zubuz-social-icon order-md-2">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item">
+              <a href="#" target="_blank">
+                <img src="assets/images/icons/linkedin.png" alt="LinkedIn">
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" target="_blank">
+                <img src="assets/images/icons/facebook.png" alt="Facebook">
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" target="_blank">
+                <img src="assets/images/icons/instagram.png" alt="Instagram">
+              </a>
+            </li>
+            <!-- <li class="list-inline-item">
+              <a href="#" target="_blank">
+                <img src="assets/images/icons/twitter.png" alt="Twitter">
+              </a>
+            </li> -->
+            <li class="list-inline-item">
+              <a href="#" target="_blank">
+                <img src="assets/images/icons/github.png" alt="GitHub">
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="zubuz-copywright">
+          <p>&copy; 2024 Acadlyst. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
 <!--footer End-->
 
 <script>
@@ -743,13 +765,17 @@
       });
   });
 </script>
-
+  <script src="assets/js/users.js"></script>
+  <script defer src="assets/js/login-auth.js"></script>
   <script src="assets/js/jquery-3.6.0.min.js"></script>
   <script src="assets/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/menu/menu.js"></script>
+  <script src="assets/js/isotope.pkgd.min.js"></script>
   <script src="assets/js/jquery.magnific-popup.min.js"></script>
   <script src="assets/js/slick.js"></script>
-
+  <script src="assets/js/countdown.js"></script>
+  <script src="assets/js/wow.min.js"></script>
+  <script src="assets/js/faq.js"></script>
   <script src="assets/js/app.js"></script>
 
 </body>
