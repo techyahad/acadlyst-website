@@ -44,10 +44,6 @@
     </script>
     <script src="https://kit.fontawesome.com/76ce8a8118.js" crossorigin="anonymous"></script>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
-
-    <style>
-
-    </style>
 </head>
 
 <body class="light">
@@ -59,7 +55,6 @@
       <div></div>
     </div>
   </div>
-
   <header class="site-header site-header--menu-center zubuz-header-section" id="sticky-menu">
     <div class="container">
       <nav class="navbar site-navbar" role="navigation" aria-label="Main Navigation">
@@ -113,19 +108,19 @@
             </div>
             <!--google-user-->
             <div id="google-user-info" style="display: none; position: relative;">
-                <button id="google-user-dropdown-btn" class="zubuz-login-btn user-dropdown-btn">
-                  <img id="google-user-pic" class="google-avatar" src="" alt="User Image">
-                  <span id="google-user-name"></span>
-                  <i class="fa-solid fa-angle-down"></i>
-                </button>
-                <div id="google-user-dropdown" class="dropdown-content">
-                    <div class="dropdown-header">
-                        <p id="google-user-email"></p>
-                    </div>
-                    <button id="google-logout-btn" class="logout-btn">
-                        <i class="fa-solid fa-power-off"></i> Logout
-                    </button>
+              <button id="google-user-dropdown-btn" class="zubuz-login-btn google-user-dropdown-btn">
+                <img id="google-user-pic" src="" alt="User Image" class="google-avatar" />
+                <span id="google-user-name"></span>
+                <i class="fa-solid fa-angle-down"></i>
+              </button>
+              <div id="google-user-dropdown" class="dropdown-content" style="display: none;">
+                <div class="dropdown-header">
+                  <p id="google-user-email"></p>
                 </div>
+                <button id="google-logout-btn" class="logout-btn">
+                  <i class="fa-solid fa-power-off"></i> Logout
+                </button>
+              </div>
             </div>
             <a id="login-btn" class="zubuz-login-btn" href="sign-in.html">Login</a>
           </div>
@@ -156,7 +151,7 @@
               <a class="zubuz-default-btn pill" href="sign-up.html">
                 <span>Sign up for free</span>
               </a>
-              <a class="zubuz-login-btn m-0" href="#features">Check Demo</a>
+              <a class="zubuz-login-btn m-0" href="survey-form.html">Check Demo</a>
             </div>
           </div>
         </div>

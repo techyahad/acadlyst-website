@@ -25,29 +25,24 @@
 
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/app.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jwt-decode/3.1.2/jwt-decode.min.js"></script>
-
-  <!-- Google Identity Services Script -->
   <script src="https://accounts.google.com/gsi/client" async defer></script>
-  
   <script>
     function handleCredentialResponse(response) {
       const decodedResponse = jwt_decode(response.credential);
       localStorage.setItem("userProfile", JSON.stringify(decodedResponse));
       window.location.href = "index.html";
     }
-
     window.onload = function () {
       google.accounts.id.initialize({
         client_id: "119242241784-1gvo018pku2ge0dcqhfn9afeidibh0m5.apps.googleusercontent.com",
         callback: handleCredentialResponse,
       });
       google.accounts.id.renderButton(
-        document.getElementById("google-login-btn"), 
-        { theme: "outlined", size: "large", text: "continue_with", logo_alignment: "center" }
+        document.getElementById("google-login-btn"), { theme: "outlined", size: "large", text: "continue_with", logo_alignment: "center" }
       );
     };
   </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jwt-decode/3.1.2/jwt-decode.min.js"></script>
 </head>
 
 <body class="light">
@@ -121,7 +116,7 @@
         <form method="POST">
           <div class="zubuz-account-field">
             <input type="text" placeholder="Enter your Fullname" id="fullname" required>
-            <span class="error-message" id="name-error"></span>
+            <span class="error-message" id="fullname-error"></span>
           </div>
           <div class="zubuz-account-field">
             <input type="email" placeholder="Enter your Email" id="email" required>
@@ -137,7 +132,7 @@
           </div>
           <div class="zubuz-account-checkbox">
             <input type="checkbox" id="check">
-            <label for="check">I have read and accept the <a href="#">terms and conditions.</a></label>
+            <label for="check">I have read and accept the<a href="#">terms and conditions</a></label>
             <span class="error-message" id="checkbox-error"></span>
           </div>
           <button id="zubuz-account-btn" type="submit"><span>Create account</span></button>

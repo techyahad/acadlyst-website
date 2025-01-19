@@ -25,11 +25,7 @@
 
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/app.min.css">
-<!-- Load jwt-decode -->
-  <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
-  <!-- Load Google Sign-In -->
   <script src="https://accounts.google.com/gsi/client" async defer></script>
-  <!-- Custom Script -->
   <script>
     function handleCredentialResponse(response) {
       const decodedResponse = jwt_decode(response.credential);
@@ -42,12 +38,13 @@
         callback: handleCredentialResponse,
       });
       google.accounts.id.renderButton(
-        document.getElementById("google-login-btn"),
-        { theme: "outlined", size: "large", text: "continue_with", logo_alignment: "center" }
+        document.getElementById("google-login-btn"), { theme: "outlined", size: "large", text: "continue_with", logo_alignment: "center" }
       );
     };
   </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jwt-decode/3.1.2/jwt-decode.min.js"></script>
 </head>
+
 <body class="light">
 
   <div class="zubuz-preloader-wrap">
