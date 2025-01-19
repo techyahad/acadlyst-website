@@ -2563,7 +2563,8 @@ button#comment-btn {
 .zubuz-default-btn,
 #comment-btn,
 #zubuz-submit-btn,
-#zubuz-account-btn {
+#zubuz-account-btn,
+#signup-btn {
   font-size: 16px;
   line-height: 24px;
   padding: 18px 40px;
@@ -2588,7 +2589,8 @@ button#comment-btn {
 .zubuz-default-btn:hover,
 #comment-btn:hover,
 #zubuz-submit-btn:hover,
-#zubuz-account-btn:hover {
+#zubuz-account-btn:hover,
+#signup-btn:hover {
 
   color: var(--white-color);
   color: var(--white-color);
@@ -2598,7 +2600,8 @@ button#comment-btn {
 .zubuz-default-btn span,
 #comment-btn span,
 #zubuz-submit-btn span,
-#zubuz-account-btn span {
+#zubuz-account-btn span,
+#signup-btn span {
   position: relative;
   z-index: 10;
   display: inline-block;
@@ -2606,7 +2609,8 @@ button#comment-btn {
 .zubuz-default-btn.zubuz-header-btn,
 #comment-btn.zubuz-header-btn,
 #zubuz-submit-btn.zubuz-header-btn,
-#zubuz-account-btn.zubuz-header-btn {
+#zubuz-account-btn.zubuz-header-btn,
+#signup-btn.zubaz-header-btn {
   padding: 13px 29px;
 }
 .zubuz-default-btn:before, .zubuz-default-btn:after,
@@ -2615,7 +2619,9 @@ button#comment-btn {
 #zubuz-submit-btn:before,
 #zubuz-submit-btn:after,
 #zubuz-account-btn:before,
-#zubuz-account-btn:after {
+#zubuz-account-btn:after,
+#signup-btn:before,
+#signup-btn:after  {
   position: absolute;
   left: 0;
   top: 0;
@@ -2625,7 +2631,8 @@ button#comment-btn {
 .zubuz-default-btn:before,
 #comment-btn:before,
 #zubuz-submit-btn:before,
-#zubuz-account-btn:before {
+#zubuz-account-btn:before,
+#signup-btn:before {
   top: -110%;
   left: -10%;
   padding-bottom: 120%;
@@ -2643,14 +2650,16 @@ button#comment-btn {
 .zubuz-default-btn:hover:before,
 #comment-btn:hover:before,
 #zubuz-submit-btn:hover:before,
-#zubuz-account-btn:hover:before {
+#zubuz-account-btn:hover:before,
+#signup-btn:hover:before {
   -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
   transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
 }
 .zubuz-default-btn:after,
 #comment-btn:after,
 #zubuz-submit-btn:after,
-#zubuz-account-btn:after {
+#zubuz-account-btn:after,
+#signup-btn:after {
   background: var(--secondary-color);
   content: "";
   -webkit-transform: translate3d(0, -100%, 0);
@@ -2662,7 +2671,8 @@ button#comment-btn {
 .zubuz-default-btn:hover:after,
 #comment-btn:hover:after,
 #zubuz-submit-btn:hover:after,
-#zubuz-account-btn:hover:after {
+#zubuz-account-btn:hover:after,
+#signup-btn:hover:after {
   -webkit-transition-delay: 0.4s;
   transition-delay: 0.4s;
   -webkit-transition-timing-function: linear;
@@ -2697,7 +2707,7 @@ button#comment-btn {
 .zubuz-default-btn.pill,
 #comment-btn.pill,
 #zubuz-submit-btn.pill,
-#zubuz-account-btn.pill {
+#zubuz-account-btn.pill{
   border-radius: 50px;
 }
 .zubuz-default-btn.btn-icon,
@@ -2709,7 +2719,8 @@ button#comment-btn {
 .zubuz-default-btn:focus,
 #comment-btn:focus,
 #zubuz-submit-btn:focus,
-#zubuz-account-btn:focus {
+#zubuz-account-btn:focus,
+#signup-btn:focus {
   box-shadow: none;
 }
 

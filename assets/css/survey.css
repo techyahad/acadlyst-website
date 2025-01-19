@@ -1,0 +1,97 @@
+
+.section-title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .section-title h2 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .section-title p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 30px;
+  }
+  
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .form-field {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-field label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .form-field input, select{
+    margin: 0;
+    height: 60px;
+    width: 100%;
+    color: var(--body-color);
+    font-size: 16px;
+    border-radius: 10px;
+    background-color: var(--white-bg);
+    padding: 15px 24px !important;
+    border: none !important;
+    transition: all 0.4s;
+    letter-spacing: 0.5px;
+    border: 1px solid var(--light-color) !important;
+  }
+
+  .form-field textarea {
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+
+  }
+
+  input:focus,
+textarea:focus,
+select:focus {
+  border: 1px solid var(--primary-color) !important;
+}
+input::placeholder, textarea::placeholder{
+  opacity: 0.7;
+}
+  .form-field textarea{
+    margin-bottom: 10px;
+  }
+  
+  textarea {
+    resize: none;
+  }
+  
+  .full-width {
+    grid-column: span 2;
+  }
+  
+  .form-checkbox {
+    margin: 20px 0;
+    font-size: 14px;
+  }
+  
+  .form-checkbox input {
+    margin-right: 10px;
+  }
+
+  .error-message {
+    color: red;
+    font-size: 0.75em;
+    margin-top: 4px;
+    display: block;
+  }
+  .description-words{
+    font-size: 14px;
+  }
