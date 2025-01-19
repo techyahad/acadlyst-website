@@ -95,3 +95,32 @@ input::placeholder, textarea::placeholder{
   .description-words{
     font-size: 14px;
   }
+  @media screen and (max-width: 768px) {
+    .form-grid {
+      grid-template-columns: 1fr; /* Single column layout */
+    }
+  
+    .form-field.full-width {
+      grid-column: span 1; /* Adjust full-width fields to align with single column */
+    }
+  
+    .section-title h2 {
+      font-size: 32px; /* Adjust font size for better readability on small screens */
+    }
+  
+    .section-title p {
+      font-size: 14px;
+    }
+  
+    .form-field input, 
+    .form-field select, 
+    .form-field textarea {
+      font-size: 14px; /* Smaller font size for input fields */
+      padding: 10px 15px; /* Adjust padding */
+    }
+  
+    #zubuz-account-btn {
+      font-size: 16px;
+      padding: 15px;
+    }
+  }
