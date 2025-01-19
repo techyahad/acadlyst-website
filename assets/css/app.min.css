@@ -2609,7 +2609,8 @@ button#comment-btn {
 .zubuz-default-btn.zubuz-header-btn,
 #comment-btn.zubuz-header-btn,
 #zubuz-submit-btn.zubuz-header-btn,
-#zubuz-account-btn.zubuz-header-btn {
+#zubuz-account-btn.zubuz-header-btn,
+#signup-btn.zubaz-header-btn {
   padding: 13px 29px;
 }
 .zubuz-default-btn:before, .zubuz-default-btn:after,
@@ -2618,7 +2619,9 @@ button#comment-btn {
 #zubuz-submit-btn:before,
 #zubuz-submit-btn:after,
 #zubuz-account-btn:before,
-#zubuz-account-btn:after {
+#zubuz-account-btn:after,
+#signup-btn:before,
+#signup-btn:after  {
   position: absolute;
   left: 0;
   top: 0;
@@ -5026,7 +5029,7 @@ a.forgot-password {
 }
 .zubuz-account-checkbox label {
   position: relative;
-  font-size: 14px;
+  font-size: 16px;
   /* display: flex; */
   align-items: center;
 }
@@ -5999,6 +6002,11 @@ button#zubuz-notified-btn:hover {
     margin-bottom: 10px;
   }
 }
-
+.error-message {
+  color: red;
+  font-size: 0.75em;
+  margin-top: 4px;
+  display: block;
+}
 /*1.4 themes css*/
 /*# sourceMappingURL=app.css.map */

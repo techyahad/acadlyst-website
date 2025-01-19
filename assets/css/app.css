@@ -5026,7 +5026,7 @@ a.forgot-password {
 }
 .zubuz-account-checkbox label {
   position: relative;
-  font-size: 14px;
+  font-size: 16px;
   /* display: flex; */
   align-items: center;
 }
@@ -5998,6 +5998,12 @@ button#zubuz-notified-btn:hover {
     margin-top: 5px;
     margin-bottom: 10px;
   }
+}
+.error-message {
+  color: red;
+  font-size: 0.75em;
+  margin-top: 4px;
+  display: block;
 }
 
 /*1.4 themes css*/
