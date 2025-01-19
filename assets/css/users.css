@@ -92,41 +92,69 @@
     position: absolute;
     top: 100%;
     right: 0;
-    background: #fff;
+    width: 200px;
+    background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 100;
     display: none;
-    min-width: 200px;
+    overflow: hidden;
   }
   
   .dropdown-header {
+    color: #333;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
     border-bottom: 1px solid #ddd;
-    padding-bottom: 8px;
-    margin-bottom: 8px;
   }
   
   .dropdown-header p {
-    font-size: 14px;
-    color: #333;
     margin: 0;
+    word-break: break-word;
   }
   
   .logout-btn {
     width: 100%;
-    color: #333;
+    padding: 10px 0;
     border: none;
-    border-radius: 4px;
-    padding: 8px;
-    text-align: left;
+    background: none;
+    color: #555;
+    font-size: 14px;
     cursor: pointer;
+    transition: color 0.3s, background-color 0.3s;
   }
   
   .logout-btn:hover {
-    background: #d32f2f;
+    color: #ff0000;
+    background: #f2f2f2;
   }
+  
+  .user-dropdown-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #333;
+  }
+  
+  .user-dropdown-btn i {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+  }
+  
+  .user-dropdown-btn.active i {
+    transform: rotate(180deg);
+  }
+  
+  /* Avatar Style for Google Users */
   .google-avatar {
     border-radius: 50%;
     width: 40px;
@@ -150,11 +178,9 @@
   .zubuz-login-btn i {
     margin-left: 8px;
   }
-  .user-dropdown-btn:hover + .dropdown-content,
-  .google-user-dropdown-btn:hover + .dropdown-content {
-    display: block;
-  }
   
+  /* Dropdown Toggle Logic */
+  .user-dropdown-btn:hover + .dropdown-content,
   .google-user-dropdown-btn:hover + .dropdown-content {
     display: block;
   }
