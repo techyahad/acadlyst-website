@@ -21,11 +21,29 @@
   <link rel="stylesheet" href="assets/css/animate.css">
   <link rel="stylesheet" href="assets/css/fontawesome.css">
 
-
   <!-- Code Editor  -->
 
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/app.min.css">
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script>
+    function handleCredentialResponse(response) {
+      const decodedResponse = jwt_decode(response.credential);
+      localStorage.setItem("userProfile", JSON.stringify(decodedResponse));
+      window.location.href = "index.html";
+    }
+    window.onload = function () {
+      google.accounts.id.initialize({
+        client_id: "119242241784-1gvo018pku2ge0dcqhfn9afeidibh0m5.apps.googleusercontent.com",
+        callback: handleCredentialResponse,
+      });
+      google.accounts.id.renderButton(
+        document.getElementById("google-login-btn"), 
+        { theme: "outline", size: "large" }
+      );
+    };
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jwt-decode/3.1.2/jwt-decode.min.js"></script>
 </head>
 
 <body class="light">
@@ -38,7 +56,6 @@
       <div></div>
     </div>
   </div>
-
 
   <header class="site-header site-header--menu-center zubuz-header-section" id="sticky-menu">
     <div class="container">
@@ -69,9 +86,6 @@
               <li class="nav-item">
                 <a href="index.html#features" class="nav-link-item">Features</a>
               </li>
-              <li class="nav-item nav-item-has-children">
-                <a href="index.html#pricing" class="nav-link-item drop-trigger">Pricing</a>
-              </li>
               <li class="nav-item">
                 <a href="contact-us.html" class="nav-link-item">Contact</a>
               </li>
@@ -82,8 +96,8 @@
           <div class="zubuz-header-btn-wrap">
             <a class="zubuz-login-btn" href="sign-in.html">Login</a>
           </div>
-          <a class="zubuz-default-btn zubuz-header-btn" href="contact-us.html">
-            <span>Book a Demo</span>
+          <a class="zubuz-default-btn zubuz-header-btn" href="survey-form.html">
+            <span>Add to Wishlist</span>
           </a>
         </div>
         <!-- mobile menu trigger -->
@@ -94,21 +108,20 @@
     </div>
   </header>
 
-
   <div class="section zubuz-extra-section">
     <div class="container">
-      <div class="zubuz-section-title center">
-        <h2>Sign In Please!</h2>
-      </div>
       <div class="zubuz-account-wrap">
-        <form action="#">
+        <div class="zubuz-section-title center">
+          <h2>Sign In Please!</h2>
+        </div>
+        <form method="post">
           <div class="zubuz-account-field">
-            <label>Enter email address</label>
-            <input type="email" placeholder="example@gmail.com">
+            <input type="email" placeholder="Enter your Email" id="email">
+            <span class="error-message" id="email-error"></span>
           </div>
           <div class="zubuz-account-field">
-            <label>Enter Password</label>
-            <input type="password" placeholder="Enter Password">
+            <input type="password" placeholder="Enter your Password" id="password">
+            <span class="error-message" id="password-error"></span>
           </div>
           <div class="zubuz-account-checkbox-wrap">
             <div class="zubuz-account-checkbox">
@@ -118,7 +131,10 @@
             <a class="forgot-password" href="reset-password.html">Forgot password?</a>
           </div>
           <button id="zubuz-account-btn" type="submit"><span>Sign in</span></button>
-          <div class="zubuz-or"></div>
+          <div class="zubuz-or">
+            <p>or</p>
+          </div>
+          <div id="google-login-btn"></div>
           <div class="zubuz-account-bottom">
             <p>Not a member yet? <a href="sign-up.html">Sign up here</a></p>
           </div>
@@ -127,15 +143,8 @@
     </div>
   </div>
 
-
-
-
-
-
-
-
-
   <!-- scripts -->
+  <script defer src="assets/js/login-auth.js"></script>
   <script src="assets/js/jquery-3.6.0.min.js"></script>
   <script src="assets/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/menu/menu.js"></script>
@@ -145,9 +154,7 @@
   <script src="assets/js/countdown.js"></script>
   <script src="assets/js/wow.min.js"></script>
   <script src="assets/js/faq.js"></script>
-
   <script src="assets/js/app.js"></script>
-
-
 </body>
 </html>
+
