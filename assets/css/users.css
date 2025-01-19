@@ -11,8 +11,6 @@
     display: none;
     overflow: hidden;
   }
-  
-  /* Dropdown header with email */
   #user-dropdown .dropdown-header {
     color: #333;
     padding: 10px;
@@ -21,14 +19,10 @@
     font-weight: bold;
     border-bottom: 1px solid #ddd;
   }
-  
-  /* User email text */
   #user-dropdown p {
     margin: 0;
     word-break: break-word;
   }
-  
-  /* Logout button */
   #user-dropdown .logout-btn {
     width: 100%;
     padding: 10px 0;
@@ -39,13 +33,9 @@
     cursor: pointer;
     transition: color 0.3s, background-color 0.3s;
   }
-  
-  /* Hover effect on logout button */
   #user-dropdown .logout-btn:hover {
     color: #ff0000;
   }
-  
-  /* Dropdown toggle button */
   .user-dropdown-btn {
     display: flex;
     align-items: center;
@@ -58,22 +48,16 @@
     cursor: pointer;
     color: #333;
   }
-  
   .user-dropdown-btn i {
     font-size: 12px;
     transition: transform 0.3s ease;
   }
-  
-  /* Rotate arrow when dropdown is open */
   .user-dropdown-btn.active i {
     transform: rotate(180deg);
   }
-  
-  /* Smooth dropdown transition */
   #user-dropdown {
     animation: fadeIn 0.3s ease;
   }
-  
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -86,9 +70,7 @@
   }
   
 
-
-
-.dropdown-content {
+#google-user-dropdown{
     position: absolute;
     top: 100%;
     right: 0;
@@ -100,23 +82,20 @@
     z-index: 100;
     display: none;
     overflow: hidden;
-  }
-  
-  .dropdown-header {
+}
+#google-user-dropdown .dropdown-header{
     color: #333;
     padding: 10px;
     text-align: center;
     font-size: 14px;
     font-weight: bold;
     border-bottom: 1px solid #ddd;
-  }
-  
-  .dropdown-header p {
+}
+#google-user-dropdown p {
     margin: 0;
     word-break: break-word;
   }
-  
-  .logout-btn {
+#google-user-dropdown .logout-btn {
     width: 100%;
     padding: 10px 0;
     border: none;
@@ -125,14 +104,11 @@
     font-size: 14px;
     cursor: pointer;
     transition: color 0.3s, background-color 0.3s;
-  }
-  
-  .logout-btn:hover {
+}
+ #google-user-dropdown .logout-btn:hover {
     color: #ff0000;
-    background: #f2f2f2;
-  }
-  
-  .user-dropdown-btn {
+}
+.google-user-dropdown-btn {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -143,45 +119,31 @@
     border: none;
     cursor: pointer;
     color: #333;
-  }
-  
-  .user-dropdown-btn i {
+}
+.google-user-dropdown-btn i {
     font-size: 12px;
     transition: transform 0.3s ease;
   }
-  
-  .user-dropdown-btn.active i {
+.google-user-dropdown-btn.active i {
     transform: rotate(180deg);
   }
-  
-  /* Avatar Style for Google Users */
-  .google-avatar {
+#google-user-dropdown {
+    animation: fadeIn 0.3s ease;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }  
+.google-avatar {
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-  }
-  
-  .zubuz-login-btn {
-    display: flex;
-    align-items: center;
-    background-color: #e0f7fa;
-    color: #00695c;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  .zubuz-login-btn i {
-    margin-left: 8px;
-  }
-  
-  /* Dropdown Toggle Logic */
-  .user-dropdown-btn:hover + .dropdown-content,
-  .google-user-dropdown-btn:hover + .dropdown-content {
-    display: block;
-  }
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+}
   
