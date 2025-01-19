@@ -42,12 +42,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const googleLogoutBtn = document.getElementById("google-logout-btn");
     const googleUserPic = document.getElementById("google-user-pic");
     const googleUserName = document.getElementById("google-user-name");
+    const googleUserEmail = document.getElementById("google-user-email");
     const googleDropdownBtn = document.getElementById("google-user-dropdown-btn");
     const googleDropdown = document.getElementById("google-user-dropdown");
     const loginBtn = document.getElementById("login-btn");
     if (userProfile) {
       googleUserPic.src = userProfile.picture;
       googleUserName.textContent = userProfile.name;
+      googleUserEmail.textContent = userProfile.email;
       userInfoDiv.style.display = "flex";
       loginBtn.style.display = "none";
     }
