@@ -5029,8 +5029,8 @@ a.forgot-password {
 }
 .zubuz-account-checkbox label {
   position: relative;
-  font-size: 16px;
-  display: flex;
+  font-size: 14px;
+  /* display: flex; */
   align-items: center;
 }
 .zubuz-account-checkbox label a {
