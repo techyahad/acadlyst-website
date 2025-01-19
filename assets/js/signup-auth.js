@@ -1,15 +1,15 @@
 document.getElementById('zubuz-account-btn').addEventListener('click', function (e) {
     e.preventDefault();
     document.querySelectorAll('.error-message').forEach((el) => (el.textContent = ''));
-    const fullname = document.getElementById('fullname').value.trim();
+    const fullName = document.getElementById('fullname').value.trim();
     const email = document.getElementById('email').value.trim();
     const password = document.getElementById('password').value.trim();
     const re_password = document.getElementById('re-password').value.trim();
     const checkbox = document.getElementById('check').checked;
     let isValid = true;
-    if (!fullname) {
+    if (!fullName) {
         isValid = false;
-        document.getElementById('name-error').textContent = 'Full Name is required.';
+        document.getElementById('fullname-error').textContent = 'Full Name is required.';
     }
     if (!email) {
         isValid = false;
@@ -51,7 +51,7 @@ document.getElementById('zubuz-account-btn').addEventListener('click', function 
     }
     if (!isValid) return;
     const formData = {
-        fullname,
+        fullName,
         email,
         password
     };
@@ -60,8 +60,7 @@ document.getElementById('zubuz-account-btn').addEventListener('click', function 
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
     })
-        .then((response) => response.json())
-        .then((data) => {
+    .then((response) => response.json()).then((data) => {
         if (data.error) {
             alert(data.error);
         } else {
@@ -69,57 +68,21 @@ document.getElementById('zubuz-account-btn').addEventListener('click', function 
             alert(data.message);
             window.location.href = 'sign-in.html';
         }
-        })
-        .catch((error) => {
+    }).catch((error) => {
         console.error('Error:', error);
         alert('An error occurred while submitting the survey.');
         });
-    });
-    document.querySelectorAll('input').forEach((input) => {
+});
+document.querySelectorAll('input').forEach((input) => {
     input.addEventListener('focus', () => {
         const errorId = `${input.id}-error`;
         const errorElement = document.getElementById(errorId);
         if (errorElement) errorElement.textContent = '';
     });
-    input.addEventListener('input', () => {
-        const errorId = `${input.id}-error`;
-        const errorElement = document.getElementById(errorId);
+});
+document.getElementById('check').addEventListener('change', () => {
+        const errorElement = document.getElementById('checkbox-error');
         if (errorElement) errorElement.textContent = '';
-    });
-    });
-function initializeGoogleSignup() {
-    google.accounts.id.initialize({
-      client_id: "<YOUR_GOOGLE_CLIENT_ID>",
-      callback: handleGoogleSignup,
-    });
-    google.accounts.id.renderButton(
-      document.getElementById("google-signup-btn"),
-      { theme: "outline", size: "large" }
-    );
-  }
-  function handleGoogleSignup(response) {
-    const idToken = response.credential;
-    fetch("http://127.0.0.1:5000/google-signup", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ idToken }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.error) {
-          alert(data.error);
-        } else {
-          alert("Google Sign-Up Successful! Please log in.");
-          window.location.href = "sign-in.html";
-        }
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-        alert("An error occurred during Google Sign-Up.");
-      });
-  }
-  
-  document.addEventListener("DOMContentLoaded", () => {
-    initializeGoogleSignup();
-  });
-  
+});
+
+    
