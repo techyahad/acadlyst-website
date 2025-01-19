@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Acadlyst | Make Education Simplied</title>
+
   <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
   <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
   <!--- End favicon-->
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Raleway:wght@600;700&display=swap" rel="stylesheet">
   <!-- End google font  -->
+
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/magnific-popup.css">
   <link rel="stylesheet" href="assets/css/slick.css">
   <link rel="stylesheet" href="assets/css/animate.css">
   <link rel="stylesheet" href="assets/css/fontawesome.css">
+
   <!-- Code Editor  -->
+
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/app.min.css">
   <script src="https://accounts.google.com/gsi/client" async defer></script>
@@ -31,7 +38,7 @@
         callback: handleCredentialResponse,
       });
       google.accounts.id.renderButton(
-        document.getElementById("google-signup-btn"), { theme: "outlined", size: "large", text: "continue_with", logo_alignment: "center" }
+        document.getElementById("google-login-btn"), { theme: "outlined", size: "large", text: "continue_with", logo_alignment: "center" }
       );
     };
   </script>
@@ -39,7 +46,6 @@
 </head>
 
 <body class="light">
-
   <div class="zubuz-preloader-wrap">
     <div class="zubuz-preloader">
       <div></div>
@@ -48,6 +54,8 @@
       <div></div>
     </div>
   </div>
+
+  
   <header class="site-header site-header--menu-center zubuz-header-section" id="sticky-menu">
     <div class="container">
       <nav class="navbar site-navbar">
@@ -98,6 +106,7 @@
       </nav>
     </div>
   </header>
+
   <div class="section zubuz-extra-section">
     <div class="container">
       <div class="zubuz-account-wrap">
@@ -130,7 +139,7 @@
           <div class="zubuz-or">
             <p>or</p>
           </div>
-          <div id="google-signup-btn" style="display: flex; justify-content: center; align-items: center; margin: auto;"></div>
+          <div id="google-login-btn" style="display: flex; justify-content: center; align-items: center; margin: auto;"></div>
           <div class="zubuz-account-bottom">
             <p>Already have an account? <a href="sign-in.html">Log in here</a></p>
           </div>
@@ -138,7 +147,9 @@
       </div>
     </div>
   </div>
-  <script src="assets/js/signup-auth.js"></script>
+
+  <!-- scripts -->
+  <script defer src="assets/js/signup-auth.js"></script>
   <script src="assets/js/jquery-3.6.0.min.js"></script>
   <script src="assets/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/menu/menu.js"></script>
@@ -151,3 +162,4 @@
   <script src="assets/js/app.js"></script>
 </body>
 </html>
+
