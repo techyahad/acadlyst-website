@@ -21,6 +21,25 @@
 
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/app.min.css">
+
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script>
+    function handleCredentialResponse(response) {
+      const decodedResponse = jwt_decode(response.credential);
+      localStorage.setItem("userProfile", JSON.stringify(decodedResponse));
+      window.location.href = "index.html";
+    }
+    window.onload = function () {
+      google.accounts.id.initialize({
+        client_id: "119242241784-1gvo018pku2ge0dcqhfn9afeidibh0m5.apps.googleusercontent.com",
+        callback: handleCredentialResponse,
+      });
+      google.accounts.id.renderButton(
+        document.getElementById("google-signup-btn"), { theme: "outlined", size: "large", text: "continue_with", logo_alignment: "center" }
+      );
+    };
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jwt-decode/3.1.2/jwt-decode.min.js"></script>
 </head>
 
 <body class="light">
@@ -64,9 +83,6 @@
               <li class="nav-item">
                 <a href="index.html#features" class="nav-link-item">Features</a>
               </li>
-              <li class="nav-item nav-item-has-children">
-                <a href="index.html#pricing" class="nav-link-item drop-trigger">Pricing</a>
-              </li>
               <li class="nav-item">
                 <a href="contact-us.html" class="nav-link-item">Contact</a>
               </li>
@@ -77,8 +93,8 @@
           <div class="zubuz-header-btn-wrap">
             <a class="zubuz-login-btn" href="sign-in.html">Login</a>
           </div>
-          <a class="zubuz-default-btn zubuz-header-btn" href="contact-us.html">
-            <span>Book a Demo</span>
+          <a class="zubuz-default-btn zubuz-header-btn" href="survey-form.html">
+            <span>Add to Wishlist</span>
           </a>
         </div>
         <!-- mobile menu trigger -->
@@ -89,33 +105,39 @@
     </div>
   </header>
 
-
-
   <div class="section zubuz-extra-section">
     <div class="container">
-      <div class="zubuz-section-title center">
-        <h2>Create Account</h2>
-      </div>
       <div class="zubuz-account-wrap">
-        <form action="#">
+        <div class="zubuz-section-title center">
+          <h2>Create Account</h2>
+        </div>
+        <form method="POST">
           <div class="zubuz-account-field">
-            <label>Enter your full name</label>
-            <input type="text" placeholder="Adam Smith">
+            <input type="text" placeholder="Enter your Fullname" id="fullname" required>
+            <span class="error-message" id="name-error"></span>
           </div>
           <div class="zubuz-account-field">
-            <label>Enter email address</label>
-            <input type="email" placeholder="example@gmail.com">
+            <input type="email" placeholder="Enter your Email" id="email" required>
+            <span class="error-message" id="email-error"></span>
           </div>
           <div class="zubuz-account-field">
-            <label>Enter Password</label>
-            <input type="password" placeholder="Enter Password">
+            <input type="password" placeholder="Enter your Password" id="password" required>
+            <span class="error-message" id="password-error"></span>
+          </div>
+          <div class="zubuz-account-field">
+            <input type="password" placeholder="Re-enter Password" id="re-password" required>
+            <span class="error-message" id="re-password-error"></span>
           </div>
           <div class="zubuz-account-checkbox">
             <input type="checkbox" id="check">
-            <label for="check">I have read and accept the </label>
+            <label for="check">I have read and accept the <a href="#">terms and conditions.</a></label>
+            <span class="error-message" id="checkbox-error"></span>
           </div>
           <button id="zubuz-account-btn" type="submit"><span>Create account</span></button>
-          <div class="zubuz-or"></div>
+          <div class="zubuz-or">
+            <p>or</p>
+          </div>
+          <div id="google-signup-btn" style="display: flex; justify-content: center; align-items: center; margin: auto;"></div>
           <div class="zubuz-account-bottom">
             <p>Already have an account? <a href="sign-in.html">Log in here</a></p>
           </div>
@@ -125,6 +147,44 @@
   </div>
 
   <!-- scripts -->
+  <script>
+    function initializeGoogleSignup() {
+    google.accounts.id.initialize({
+      client_id: "503171076952-u567njqm96t54e2jm7l98dghfu56t2o1.apps.googleusercontent.com",
+      callback: handleGoogleSignup,
+    });
+    google.accounts.id.renderButton(
+      document.getElementById("google-signup-btn"),
+      { theme: "outline", size: "large" }
+    );
+  }
+  function handleGoogleSignup(response) {
+    const idToken = response.credential;
+    fetch("http://127.0.0.1:5000/google-signup", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ idToken }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.error) {
+          alert(data.error);
+        } else {
+          alert("Google Sign-Up Successful! Please log in.");
+          window.location.href = "sign-in.html";
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        alert("An error occurred during Google Sign-Up.");
+      });
+  }
+  
+  document.addEventListener("DOMContentLoaded", () => {
+    initializeGoogleSignup();
+  });
+  </script>
+  <script src="assets/js/signup-auth.js"></script>
   <script src="assets/js/jquery-3.6.0.min.js"></script>
   <script src="assets/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/menu/menu.js"></script>
@@ -134,9 +194,6 @@
   <script src="assets/js/countdown.js"></script>
   <script src="assets/js/wow.min.js"></script>
   <script src="assets/js/faq.js"></script>
-
   <script src="assets/js/app.js"></script>
-
-
 </body>
 </html>
