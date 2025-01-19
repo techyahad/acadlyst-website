@@ -29,9 +29,7 @@ document.getElementById('zubuz-account-btn').addEventListener('click', function 
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
-    })
-      .then((response) => response.json())
-      .then((data) => {
+    }).then((response) => response.json()).then((data) => {
         if (data.error) {
           alert(data.error);
         } else {
@@ -46,8 +44,13 @@ document.getElementById('zubuz-account-btn').addEventListener('click', function 
         console.error('Error:', error);
         alert('An error occurred while logging in.');
       });
+});
+document.querySelectorAll('input').forEach((input) => {
+  input.addEventListener('focus', () => {
+      const errorId = `${input.id}-error`;
+      const errorElement = document.getElementById(errorId);
+      if (errorElement) errorElement.textContent = '';
   });
-
-
+});
   
   
