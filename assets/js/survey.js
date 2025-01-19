@@ -119,6 +119,10 @@ document.getElementById('zubuz-account-btn').addEventListener('click', function 
         if (errorElement) errorElement.textContent = '';
     });
     });
+    document.getElementById('check').addEventListener('change', () => {
+        const errorElement = document.getElementById('checkbox-error');
+        if (errorElement) errorElement.textContent = '';
+    });
     document.getElementById('description').addEventListener('input', function () {
     const wordCount = this.value.trim().split(/\s+/).length;
     document.getElementById('word-counter').textContent = wordCount;
