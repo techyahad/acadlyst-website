@@ -25,41 +25,26 @@
 
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/app.min.css">
+   
   <!-- Load the jwt-decode script first -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jwt-decode/3.1.2/jwt-decode.min.js"></script>
-
-<!-- Google Client script -->
-<script src="https://accounts.google.com/gsi/client" async defer></script>
-
-<script>
-  window.onload = function () {
-    // Ensure jwt_decode is available before using it
-    if (typeof jwt_decode === 'undefined') {
-      console.error('jwt_decode is not loaded');
-      return;
-    }
-
-    // Handle Google credential response
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jwt-decode/3.1.2/jwt-decode.min.js"></script>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script>
     function handleCredentialResponse(response) {
-      const decodedResponse = jwt_decode(response.credential);  // jwt_decode is available here
+      const decodedResponse = jwt_decode(response.credential);
       localStorage.setItem("userProfile", JSON.stringify(decodedResponse));
       window.location.href = "index.html";
     }
-
-    // Initialize Google sign-in
-    google.accounts.id.initialize({
-      client_id: "119242241784-1gvo018pku2ge0dcqhfn9afeidibh0m5.apps.googleusercontent.com",
-      callback: handleCredentialResponse,
-    });
-
-    // Render the Google sign-in button
-    google.accounts.id.renderButton(
-      document.getElementById("google-login-btn"), 
-      { theme: "outlined", size: "large", text: "continue_with", logo_alignment: "center" }
-    );
-  };
-</script>
-
+    window.onload = function () {
+      google.accounts.id.initialize({
+        client_id: "119242241784-1gvo018pku2ge0dcqhfn9afeidibh0m5.apps.googleusercontent.com",
+        callback: handleCredentialResponse,
+      });
+      google.accounts.id.renderButton(
+        document.getElementById("google-login-btn"), { theme: "outlined", size: "large", text: "continue_with", logo_alignment: "center" }
+      );
+    };
+  </script>
 </head>
 
 <body class="light">
