@@ -88,23 +88,41 @@ document.getElementById('zubuz-account-btn').addEventListener('click', function 
         description,
         status: 'pending',
     };
-    fetch('http://127.0.0.1:5000/submit-survey', {
+    // fetch('http://127.0.0.1:5000/submit-survey', {
+    //     method: 'POST',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify(formData),
+    // })
+    //     .then((response) => response.json())
+    //     .then((data) => {
+    //     if (data.error) {
+    //         alert(data.error);
+    //     } else {
+    //         document.querySelector('form').reset();
+    //         alert(data.message);
+    //     }
+    //     })
+    //     .catch((error) => {
+    //     console.error('Error:', error);
+    //     alert('An error occurred while submitting the survey.');
+    //     });
+    fetch('https://sheetdb.io/api/v1/hygg1w5xp8sfz', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ data: formData }),
     })
         .then((response) => response.json())
         .then((data) => {
-        if (data.error) {
-            alert(data.error);
-        } else {
-            document.querySelector('form').reset();
-            alert(data.message);
-        }
+            if (data.error) {
+                alert('Failed to submit data: ' + data.error);
+            } else {
+                document.querySelector('form').reset();
+                alert('Survey submitted successfully!');
+            }
         })
         .catch((error) => {
-        console.error('Error:', error);
-        alert('An error occurred while submitting the survey.');
+            console.error('Error:', error);
+            alert('An error occurred while submitting the survey.');
         });
     });
     document.querySelectorAll('input, select, textarea').forEach((input) => {
